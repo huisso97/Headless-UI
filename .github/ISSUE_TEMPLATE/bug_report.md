@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: "\b버그에 대해서 입력해주세요."
 title: ''
 labels: bug
 assignees: huisso97
