@@ -10,8 +10,8 @@ export default {
 
 const Template: StoryFn = (args) => (
   <Disclosure {...args}>
-    <DisclosureButton style={{ backgroundColor: "green" }}>
-      Toggle Panel
+    <DisclosureButton style={{ backgroundColor: "white" }}>
+      {args.defaultOpen ? "Close" : "Open"}
     </DisclosureButton>
     <DisclosurePanel style={{ border: "1px solid black" }}>
       <p>This is the panel content</p>
