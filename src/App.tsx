@@ -2,8 +2,20 @@ import { Button } from "./components/Button";
 import { Card } from "./components/Card";
 import { Text } from "./components/Text";
 import { FormControl } from "./components/FormControl";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "./components/Disclosure";
+import { useState } from "react";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  console.log("부모", isOpen);
+  const handleToggle = (newIsOpen: boolean) => {
+    setIsOpen(newIsOpen);
+  };
+
   return (
     <div>
       <div>
@@ -64,6 +76,16 @@ function App() {
             resize: "none",
           }}
         />
+      </div>
+      <div>
+        <Disclosure isOpen={isOpen} onToggle={handleToggle}>
+          <DisclosureButton style={{ backgroundColor: "white" }}>
+            {isOpen ? "Close" : "Open"}
+          </DisclosureButton>
+          <DisclosurePanel style={{ border: "1px solid black" }}>
+            <p>This is the panel content</p>
+          </DisclosurePanel>
+        </Disclosure>
       </div>
     </div>
   );
