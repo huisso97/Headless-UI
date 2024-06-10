@@ -1,4 +1,4 @@
-import { ReactNode, useReducer, useRef } from "react";
+import { ReactNode, useEffect, useReducer, useRef } from "react";
 import {
   DisclosureContext,
   DisclosureStates,
@@ -6,21 +6,26 @@ import {
 } from "./DisclosureContext";
 
 interface DisclosureProps {
-  defaultOpen?: boolean;
+  isOpen: boolean;
+  onToggle: (isOpen: boolean) => void;
   children: ReactNode;
 }
 
-const Disclosure = ({ defaultOpen = false, children }: DisclosureProps) => {
+const Disclosure = ({ isOpen, onToggle, children }: DisclosureProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   const [state, dispatch] = useReducer(stateReducer, {
-    disclosureState: defaultOpen
-      ? DisclosureStates.Open
-      : DisclosureStates.Closed,
+    disclosureState: isOpen ? DisclosureStates.Open : DisclosureStates.Closed,
     buttonRef,
     panelRef,
   });
+
+  useEffect(() => {
+    if (onToggle) {
+      onToggle(state.disclosureState === DisclosureStates.Open);
+    }
+  }, [state.disclosureState, onToggle]);
 
   return (
     <DisclosureContext.Provider value={{ state, dispatch }}>
