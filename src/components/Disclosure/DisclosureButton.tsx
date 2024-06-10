@@ -19,7 +19,6 @@ const DisclosureButton = ({ children, ...props }: ButtonProps) => {
 
   return (
     <button
-      ref={state.buttonRef}
       onClick={() => dispatch({ type: ActionTypes.ToggleDisclosure })}
       aria-expanded={state.disclosureState === DisclosureStates.Open}
       {...props}

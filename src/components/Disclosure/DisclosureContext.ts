@@ -1,4 +1,4 @@
-import React, { createContext, Dispatch } from "react";
+import { createContext, Dispatch } from "react";
 
 enum DisclosureStates {
   Open,
@@ -7,8 +7,6 @@ enum DisclosureStates {
 
 interface StateDefinition {
   disclosureState: DisclosureStates;
-  buttonRef: React.RefObject<HTMLButtonElement>;
-  panelRef: React.RefObject<HTMLDivElement>;
 }
 
 enum ActionTypes {

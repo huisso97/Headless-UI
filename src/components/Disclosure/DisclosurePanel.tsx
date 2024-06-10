@@ -14,11 +14,7 @@ const DisclosurePanel = ({ children, ...props }: PanelProps) => {
   const { state } = context;
 
   return (
-    <div
-      ref={state.panelRef}
-      hidden={state.disclosureState !== DisclosureStates.Open}
-      {...props}
-    >
+    <div hidden={state.disclosureState !== DisclosureStates.Open} {...props}>
       {children}
     </div>
   );

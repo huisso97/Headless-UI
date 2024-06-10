@@ -11,7 +11,7 @@ import { useState } from "react";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
+  console.log("부모", isOpen);
   const handleToggle = (newIsOpen: boolean) => {
     setIsOpen(newIsOpen);
   };
