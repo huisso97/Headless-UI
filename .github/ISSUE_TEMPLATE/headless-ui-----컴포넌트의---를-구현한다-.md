@@ -1,7 +1,7 @@
 ---
 name: 'Headless UI: {} 컴포넌트의 {}를 구현한다.'
 about: Headless UI Comonent와 이슈 목표를 작성해주세요.
-title: "[Feat]"
+title: 'Headless UI: {} 컴포넌트의 {}를 구현한다.'
 labels: enhancement
 assignees: huisso97
 
