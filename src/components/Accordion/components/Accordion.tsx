@@ -1,11 +1,16 @@
 import { ReactNode } from "react";
+import AccordionProvider from "./AccordionProvider";
 
 interface AccordionProps {
   children: ReactNode;
 }
 
 const Accordion = ({ children }: AccordionProps) => {
-  return <div className="accordion">{children}</div>;
+  return (
+    <AccordionProvider>
+      <div className="accordion">{children}</div>
+    </AccordionProvider>
+  );
 };
 
 export default Accordion;
